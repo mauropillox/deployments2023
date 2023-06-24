@@ -147,3 +147,8 @@ variable "vpc_aws_az2" {
   type        = string
   default     = "us-east-1b" # Replace with the appropriate default value
 }
+
+variable "git_ssh_private_key" {
+  description = "SSH private key for Git authentication"
+  type        = string
+}
