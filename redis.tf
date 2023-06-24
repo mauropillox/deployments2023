@@ -1,5 +1,5 @@
-# Crea el grupo de parámetros para Redis
-resource "aws_elasticache_parameter_group" "redis_parameter_group" {
+#Crea el grupo de parámetros para Redis
+resource "aws_elasticache_parameter_group" "redis_parameter_group1" {
   name   = "obligatorio-redis-parameter-group"
   family = "redis6.x"
 
@@ -26,6 +26,6 @@ resource "aws_elasticache_cluster" "redis_instance" {
   num_cache_nodes      = 1
   port                 = 6379
   subnet_group_name    = aws_elasticache_subnet_group.redis_subnet_group.name
-  parameter_group_name = aws_elasticache_parameter_group.redis_parameter_group.name
+  parameter_group_name = aws_elasticache_parameter_group.redis_parameter_group1.name
   security_group_ids   = [aws_security_group.redis_sg.id]
 }

@@ -17,9 +17,9 @@ resource "aws_lb" "obligatorio" {
     terraform = "True"
   }
 
-  depends_on = [
-    aws_lb_target_group_attachment.obligatorio_frontend
-  ]
+  # depends_on = [
+  #   aws_lb_target_group_attachment.obligatorio_frontend
+  # ]
 }
 
 
