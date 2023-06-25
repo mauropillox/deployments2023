@@ -15,7 +15,7 @@ spec:
       serviceAccountName: default
       containers:
         - name: server
-          image: mauropillox/checkoutserviceobligatorio:latest
+          image: mauropillox/currencyservice:latest
           ports:
           - containerPort: 5050
           readinessProbe:

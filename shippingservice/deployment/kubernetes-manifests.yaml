@@ -15,7 +15,7 @@ spec:
       serviceAccountName: default
       containers:
       - name: server
-        image: mauropillox/shippingserviceobligatorio:latest
+        image: mauropillox/shippingservice:latest
         ports:
         - containerPort: 50051
         env:
