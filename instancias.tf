@@ -138,7 +138,10 @@ resource "aws_instance" "obligatorio_frontend" {
       "kubectl get deployments",
       "kubectl get services",
       "sleep 20",
-      "sudo -u ec2-user docker rmi mauropillox/redisobligatorio:latest",
+      "sudo docker rmi $(docker images -q)",
+      "sudo docker rm -f $(docker ps -aq)",
+      "sudo docker rmi $(docker images -q)",
+      "sudo -u ec2-user docker rmi mauropillox/redis:latest",
       "sudo -u ec2-user docker rmi mauropillox/adserviceobligatorio:latest",
       "sudo -u ec2-user docker rmi mauropillox/shippingserviceobligatorio:latest",
       "sudo -u ec2-user docker rmi mauropillox/cartserviceobligatorio:latest",
@@ -149,7 +152,7 @@ resource "aws_instance" "obligatorio_frontend" {
       "sudo -u ec2-user docker rmi mauropillox/recommendationserviceobligatorio:latest",
       "sudo -u ec2-user docker rmi mauropillox/checkoutserviceobligatorio:latest",
       "sudo -u ec2-user docker rmi mauropillox/loadgeneratorobligatorio:latest",
-      "sudo -u ec2-user docker rmi mauropillox/frontendobligatorio:latest"
+      "sudo -u ec2-user docker rmi mauropillox/frontendobligatorio:latest",
     ]
   }
 }
