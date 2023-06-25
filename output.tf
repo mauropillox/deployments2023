@@ -51,3 +51,11 @@ output "target_group_attachment_id" {
 output "s3_bucket_url" {
   value = "http://${aws_s3_bucket.obligatorio_bucket1.bucket}.s3-website-${var.region}.amazonaws.com"
 }
+
+output "nat_gateway_ids" {
+  value = aws_nat_gateway.nat_gateway[*].id
+}
+
+output "nat_gateway_eip_ids" {
+  value = aws_eip.nat_gateway_eip[*].id
+}

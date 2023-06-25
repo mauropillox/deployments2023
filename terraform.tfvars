@@ -30,8 +30,8 @@ eks_version     = "1.27"
 
 # Security configuration
 # profile    = "[default]"
-region     = "us-east-1"
-access_key = "ASIA25IOHIQZI62WXUEG"
-secret_key = "kY9TaQO9DeT5Z/vljhizt5jYsvq2vtkL/b3bbpv0"
-token      = "FwoGZXIvYXdzEMP//////////wEaDJONtUcfrhlckheRgyK2AU+UhK+boHOoIzs3oOWDDYCgUcSIDQLu1At4GyTJ+jvR5Txhj2RlFOoXltkcETpDq/8vASF7ti8lr5FxyA/yz+asDVr7CpkCG8+dOFVAB0OQxsbEj03Dtx2uRc8br1igWulYDosE8ucJ6YXfskvtU33nJ+d02kXBuNl8I7vtCSDXJu40lJDFm1u5uhqwSKdLwReCcuSa0X05WuiLczcM0Y+RsfINzi432iPoChd7s5HsOT5YfCqgKOfJ3KQGMi13nqhjjdPSeLt9iBj2Hq3p2sqmesrZRNQES9AKYN/lj9TCPfpwGEWaj6zL06s="
+region              = "us-east-1"
+access_key          = "ASIA25IOHIQZKERLKAGE"
+secret_key          = "7dhd5QordNDTimjcILUD+rnVWnumBvsFoVxkjCvF"
+token               = "FwoGZXIvYXdzEMj//////////wEaDOlEmDWTyfPzRKRSTiK2AQA71ekFTOxKm2UVyXWKV3e6VnL0/PTv7bqjp0QOFMaRG7okDHHv2y6SgLVAHyNc3oWLHK7qa1Y8S0IkyJylIrxT6ouKpv1GdLpwd9SR0RoYEq4DDKQyz6pxbhRTBrNAf9HYg2jdtJtw5PVpkGdChx1LrZCw9IA4ZBPT9jpVYfe/KCN3vqPSYJ9qvJb6SJ7CLXeGtU4mMnP41na/qLtFzvxJbtT0OuBo83nOl7de24d5gAdiaQ80KJfW3aQGMi1TW5RLUHFtGGKya4We4w5cJg5Hnyh0vBtIbaw9MU/NvwD4PIv2NAyBDpnGLzQ="
 git_ssh_private_key = "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"

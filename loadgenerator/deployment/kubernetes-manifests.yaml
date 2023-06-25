@@ -35,7 +35,7 @@ spec:
           value: "frontend:80"
       containers:
       - name: main
-        image: mauropillox/frontend:latest
+        image: mauropillox/frontendobligatorio:latest
         env:
         - name: FRONTEND_ADDR
           value: "frontend:80"

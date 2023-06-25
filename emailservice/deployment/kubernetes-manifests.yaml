@@ -16,7 +16,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: mauropillox/emailservice:latest
+        image: mauropillox/emailserviceobligatorio:latest
         ports:
         - containerPort: 8080
         env:

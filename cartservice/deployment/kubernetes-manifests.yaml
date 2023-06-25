@@ -16,7 +16,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: mauropillox/cartservice:latest
+        image: mauropillox/cartserviceobligatorio:latest
         ports:
         - containerPort: 7070
         env:

@@ -17,7 +17,7 @@ spec:
       serviceAccountName: default
       containers:
         - name: server
-          image: mauropillox/frontend:latest
+          image: mauropillox/frontendobligatorio:latest
           ports:
           - containerPort: 8080
           readinessProbe:

@@ -11,7 +11,7 @@ resource "aws_elasticache_parameter_group" "redis_parameter_group1" {
 
 # Crea una instancia de Redis
 resource "aws_elasticache_subnet_group" "redis_subnet_group" {
-  name       = "obligatorio-redis-subnet-group"
+  name = "obligatorio-redis-subnet-group"
   subnet_ids = [
     aws_subnet.obligatorio_private_subnet.id,
     aws_subnet.obligatorio_private_subnet_2.id

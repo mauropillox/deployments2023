@@ -14,7 +14,7 @@ resource "aws_db_instance" "obligatorio_database" {
   engine              = var.database_engine
   instance_class      = var.database_instance_class
   allocated_storage   = var.database_allocated_storage
-  identifier          = "obligatorio-database"               # Replace with the appropriate database identifier
+  identifier          = "obligatorio-database"       # Replace with the appropriate database identifier
   username            = "obligatorio"                # Replace with the appropriate username
   password            = var.database_master_password # Replace with the appropriate master password
   skip_final_snapshot = true

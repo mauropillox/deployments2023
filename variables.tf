@@ -152,3 +152,9 @@ variable "git_ssh_private_key" {
   description = "SSH private key for Git authentication"
   type        = string
 }
+
+variable "nat_gateway_eip_allocation_ids" {
+  description = "Allocation IDs of the Elastic IPs for NAT Gateways"
+  type        = list(string)
+  default     = []
+}

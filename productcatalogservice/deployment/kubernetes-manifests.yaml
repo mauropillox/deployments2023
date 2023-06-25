@@ -16,7 +16,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: mauropillox/productcatalogservice:latest
+        image: mauropillox/productcatalogserviceobligatorio:latest
         ports:
         - containerPort: 3550
         env:

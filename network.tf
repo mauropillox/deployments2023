@@ -60,7 +60,6 @@ resource "aws_subnet" "obligatorio_private_subnet_2" {
   }
 }
 
-
 # Resource for creating a route table for the VPC
 resource "aws_route_table" "obligatorio_route_table" {
   vpc_id = aws_vpc.vpc_obligatorio.id
@@ -94,5 +93,34 @@ resource "aws_route_table_association" "obligatorio_public_subnet_association" {
   route_table_id = aws_route_table.obligatorio_route_table.id
 }
 
+# Resource for the private subnet
+resource "aws_route_table_association" "obligatorio_private_subnet_association" {
+  subnet_id      = aws_subnet.obligatorio_private_subnet.id
+  route_table_id = aws_route_table.obligatorio_route_table.id
+}
 
+# Resource for creating a route for the private subnet
+resource "aws_route" "obligatorio_private_subnet_route" {
+  route_table_id         = aws_route_table.obligatorio_route_table.id
+  destination_cidr_block = "0.0.0.0/0"
+  nat_gateway_id         = aws_nat_gateway.nat_gateway.id
+}
 
+# Resource for NAT Gateway
+resource "aws_nat_gateway" "nat_gateway" {
+  allocation_id = aws_eip.nat_gateway_eip.id
+  subnet_id     = aws_subnet.obligatorio_public_subnet.id
+
+  tags = {
+    Name      = "nat-gateway"
+    terraform = "True"
+  }
+}
+
+# Resource for Elastic IP for NAT Gateway
+resource "aws_eip" "nat_gateway_eip" {
+  vpc = true
+  lifecycle {
+    prevent_destroy = true
+  }
+}
