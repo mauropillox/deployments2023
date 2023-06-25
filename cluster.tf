@@ -35,8 +35,8 @@ resource "aws_eks_node_group" "obligatorio_node_group" {
   node_group_name = "obligatorio-node-group"
   node_role_arn   = data.aws_iam_role.labrole-arn.arn
   subnet_ids      = [
-    aws_subnet.obligatorio_public_subnet.id,
-    aws_subnet.obligatorio_public_subnet2.id
+      aws_subnet.obligatorio_private_subnet.id,
+      aws_subnet.obligatorio_private_subnet_2.id
   ]
 
   scaling_config {
