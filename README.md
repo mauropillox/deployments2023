@@ -5,49 +5,49 @@ Obligatorio Implementación de Soluciones Cloud 	 Marcos Posnanski - Mauro Guima
 
 # INDICE
 
-[DECLARACION DE AUTORIA	3](#_toc138673087)
+[DECLARACION DE AUTORIA	](#_toc138673087)
 
-[ALCANCE	3](#_toc138673088)
+[ALCANCE	](#_toc138673088)
 
-[ESQUEMA ACTUAL	4](#_toc138673089)
+[ESQUEMA ACTUAL	](#_toc138673089)
 
-[Necesidad del cliente:	4](#_toc138673090)
+[Necesidad del cliente:	](#_toc138673090)
 
-[Arquitectura actual:	4](#_toc138673091)
+[Arquitectura actual:	](#_toc138673091)
 
-[Oportunidades de Mejora	5](#_toc138673092)
+[Oportunidades de Mejora	](#_toc138673092)
 
-[PROPUESTA	6](#_toc138673093)
+[PROPUESTA	](#_toc138673093)
 
-[Infraestructura en la Cloud	6](#_toc138673094)
+[Infraestructura en la Cloud	](#_toc138673094)
 
-[Solución propuesta	7](#_toc138673095)
+[Solución propuesta	](#_toc138673095)
 
-[Kubernetes como Servicio (EKS)	8](#_toc138673096)
+[Kubernetes como Servicio (EKS)	](#_toc138673096)
 
-[RECURSOS	11](#_toc138673097)
+[RECURSOS ](#_toc138673097)
 
-[Datos de Infraestructura	11](#_toc138673098)
+[Datos de Infraestructura	](#_toc138673098)
 
-[Servicios de AWS Utilizados	12](#_toc138673099)
+[Servicios de AWS Utilizados	](#_toc138673099)
 
-[Variables para las instancias EC2	13](#_toc138673100)
+[Variables para las instancias EC2	](#_toc138673100)
 
-[Variables para la base de datos RDS	13](#_toc138673101)
+[Variables para la base de datos RDS	](#_toc138673101)
 
-[Variables para los grupos de seguridad	13](#_toc138673102)
+[Variables para los grupos de seguridad	](#_toc138673102)
 
-[LIMITACIONES Y DESAFIOS	15](#_toc138673103)
+[LIMITACIONES Y DESAFIOS	](#_toc138673103)
 
-[Utilización del sistema operativo	15](#_toc138673104)
+[Utilización del sistema operativo	](#_toc138673104)
 
-[Seguridad de la solución	15](#_toc138673105)
+[Seguridad de la solución	](#_toc138673105)
 
-[Permisos y usuarios para el despliegue EC2	15](#_toc138673106)
+[Permisos y usuarios para el despliegue EC2	](#_toc138673106)
 
-[Uso de REDIS	15](#_toc138673107)
+[Uso de REDIS	](#_toc138673107)
 
-[REFERENCIAS	16](#_toc138673108)
+[REFERENCIAS	](#_toc138673108)
 
 
 
