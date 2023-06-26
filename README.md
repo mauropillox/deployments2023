@@ -2,11 +2,11 @@ Obligatorio Implementación de Soluciones Cloud 	 Marcos Posnanski - Mauro Guima
 
 ![image](https://github.com/mauropillox/deployments2023/assets/51933362/801e59f8-1d0f-4f55-b790-75f0a2c49abe)
 
-Obligatorio 
+# Obligatorio 
 
-Implementación de Soluciones Cloud
+# Implementación de Soluciones Cloud
 
-Universidad ORT Uruguay
+# Universidad ORT Uruguay
 
 
 # INDICE
@@ -135,8 +135,6 @@ El esquema de recursos en IaaS en AWS es el siguiente:
 ![image](https://github.com/mauropillox/deployments2023/assets/51933362/ae78938d-7b10-4534-91eb-d48d3f88c50e)
 
 
-Descripción generada automáticamente](Aspose.Words.92efe322-e3f4-4b49-a32c-66c00cf9d8b7.004.png)
-
 Se crea una instancia EC2 T2.micro la cual pertenece a un grupo de autoescalado, con un máximo de 2 instancias deseadas, de esta forma nos aseguramos la cantidad de instancias activas bajo cualquier problema que afecte la disponibilidad. 
 
 Se despliega Redis utilizando el servicio de Amazon ElastiCache. En este caso, ElastiCache se encarga de administrar y escalar automáticamente el clúster de Redis.
@@ -154,8 +152,6 @@ Se deben desplegar un total de 11 microservicios. Estos microservicios se deben 
 ![image](https://github.com/mauropillox/deployments2023/assets/51933362/d407c6d6-1765-4c0b-a0de-a52a2621b6a3)
 
 
-Descripción generada automáticamente](Aspose.Words.92efe322-e3f4-4b49-a32c-66c00cf9d8b7.005.png) 
-
 Para esta solución, decidimos desplegar un cluster de Kubernetes como servicio, haciendo uso de las 2 instancias EC2 como nodos de trabajo. 
 
 Cada uno de esos microservicios se despliega en un pod, habiendo 11 en total, esto nos permite obtener un entorno aislado para la ejecución de aplicaciones. Proporcionando una infraestructura flexible y escalable para ejecutar y mantener las aplicaciones en la nube.
@@ -168,7 +164,6 @@ En cada uno de estos nodos, además de los pods, se pueden crear Persistent Volu
 ![image](https://github.com/mauropillox/deployments2023/assets/51933362/ddcd2a61-f01d-4b83-aed0-f25d31a78e07)
 
 
-Descripción generada automáticamente](Aspose.Words.92efe322-e3f4-4b49-a32c-66c00cf9d8b7.006.png)
 
 
 
@@ -182,17 +177,17 @@ Descripción generada automáticamente](Aspose.Words.92efe322-e3f4-4b49-a32c-66c
 
 
 
-Una vez finalizado el despliegue quedara accesible la pagina con todas sus funcionalidades desde la siguiente URL: <http://ad2d6610af095468db56cf581c7e9088-841412388.us-east-1.elb.amazonaws.com/>
+Una vez finalizado el despliegue quedara accesible la pagina con todas sus funcionalidades:
 
-![Interfaz de usuario gráfica, Aplicación
+![image](https://github.com/mauropillox/deployments2023/assets/51933362/5d1398c9-ad61-4464-b7f3-d1c2b491cca1)
 
-Descripción generada automáticamente](Aspose.Words.92efe322-e3f4-4b49-a32c-66c00cf9d8b7.007.png)
+
 
 Vemos que no solamente se despliega la pagina web, sino que también todos los servicios correspondientes para su correcto funcionamiento. Validamos esto agregando productos al carrito de compras y también finalizando la misma. 
 
 # <a name="_toc138673097"></a>RECURSOS
 
-<a name="_toc138673098"></a>Datos de Infraestructura
+# <a name="_toc138673098"></a>Datos de Infraestructura
 
 - Tipo de instancia de EC2 para el frontend: t2.micro
 - Tipo de instancia de EC2 para Redis: cache.t2.micro
@@ -229,7 +224,7 @@ Vemos que no solamente se despliega la pagina web, sino que también todos los s
 
 
 
-<a name="_toc138673099"></a>Servicios de AWS Utilizados
+# <a name="_toc138673099"></a>Servicios de AWS Utilizados
 
 - EC2 (Elastic Compute Cloud): Se utilizan instancias EC2 para implementar los diferentes servicios, como frontend, Redis, cartservice, adservice, currencyservice, emailservice, paymentservice, productcatalogservice, recommendationservice, checkoutservice, loadgenerator y shippingservice.
 - RDS (Relational Database Service): Se utiliza RDS para implementar la base de datos relacional con el motor de base de datos MySQL.
@@ -253,7 +248,7 @@ Vemos que no solamente se despliega la pagina web, sino que también todos los s
 
 
 
-<a name="_toc138673100"></a>Variables para las instancias EC2
+# <a name="_toc138673100"></a>Variables para las instancias EC2
 
 frontend\_instance\_type = "t2.micro"
 
@@ -295,7 +290,7 @@ s3\_security\_group = "grupo-seguridad-s3-access"
 
 
 
-Variables para el nombre de los recursos
+# Variables para el nombre de los recursos
 
 lb\_name = "obligatorio-lb"
 
@@ -351,15 +346,15 @@ A lo largo del despliegue para esta tarea nos encontramos con diversos desafíos
 
 Ambos estudiantes utilizamos y estamos más familiarizados con Windows como sistema operativo base, no solo a nivel personal sino también a nivel laboral. Windows tiene algunas limitantes que al inicio tuvimos que sortear para poder acceder a la VPC y conectarlas con nuestro Visual Studio. Terminamos resolviendo estas limitantes haciendo uso de Ubuntu virtualizado desde nuestros sistemas operativos raíz. 
 
-<a name="_toc138673105"></a>Seguridad de la solución 
+# <a name="_toc138673105"></a>Seguridad de la solución 
 
 Al desplegar las subnets, tuvimos que agregar un servicio de internet NAT Gateway para poder aumentar la seguridad de la solución.
 
-<a name="_toc138673106"></a>Permisos y usuarios para el despliegue EC2
+# <a name="_toc138673106"></a>Permisos y usuarios para el despliegue EC2
 
 Un gran stopper en nuestra tarea que nos demandó un tiempo considerable resolver, fue la diferencia en con los usuarios y por ende permisos asociados a cada uno. Luego de varias horas de intentos nos dimos cuenta de que el usuario “local” desde el cual se realiza el despliegue no era el mismo que se utiliza en AWS por sí mismo. 
 
-<a name="_toc138673107"></a>Uso de REDIS
+# <a name="_toc138673107"></a>Uso de REDIS
 
 No pudimos desplegar esta solución hasta la última semana, luego de clase teórica logramos despejar varias dudas que nos permitieron su correcta implementación. 
 
