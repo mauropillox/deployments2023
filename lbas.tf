@@ -51,9 +51,9 @@ resource "aws_lb_target_group" "obligatorio" {
 }
 
 # Asociar el grupo de objetivos con las instancias
-resource "aws_lb_target_group_attachment" "obligatorio_frontend" {
+resource "aws_lb_target_group_attachment" "obligatorio_instancia" {
   target_group_arn = aws_lb_target_group.obligatorio.arn
-  target_id        = aws_instance.obligatorio_frontend.id
+  target_id        = aws_instance.obligatorio_instancia.id
 }
 
 # Recurso para el grupo de autoscaling

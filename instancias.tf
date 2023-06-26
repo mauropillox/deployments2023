@@ -1,11 +1,11 @@
-resource "aws_instance" "obligatorio_frontend" {
+resource "aws_instance" "obligatorio_instancia" {
   ami           = "ami-03ededff12e34e59e"
   instance_type = var.frontend_instance_type
 
   key_name = var.key_name
 
   tags = {
-    Name        = "instance-frontend"
+    Name        = "obligatorio-instancia"
     obligatorio = "True"
   }
 
@@ -154,7 +154,7 @@ resource "aws_instance" "obligatorio_frontend" {
 resource "aws_volume_attachment" "obligatorio_attachment" {
   device_name = "/dev/sdh"
   volume_id   = aws_ebs_volume.obligatorio_volume.id
-  instance_id = aws_instance.obligatorio_frontend.id
+  instance_id = aws_instance.obligatorio_instancia.id
 }
 
 # resource "null_resource" "read_kubernetes_server" {

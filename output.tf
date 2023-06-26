@@ -43,12 +43,12 @@ output "db_sg_id" {
 
 # IP pública del frontend
 output "frontend_ip" {
-  value = aws_instance.obligatorio_frontend.public_ip
+  value = aws_instance.obligatorio_instancia.public_ip
 }
 
 # ID de la instancia del frontend
 output "frontend_instance_id" {
-  value = aws_instance.obligatorio_frontend.id
+  value = aws_instance.obligatorio_instancia.id
 }
 
 # ID de la instancia de la base de datos
@@ -81,5 +81,5 @@ output "nat_gateway_eip_ids" {
 # }
 
 output "kubernetes_server" {
-  value = aws_instance.obligatorio_frontend.public_ip
+  value = aws_instance.obligatorio_instancia.public_ip
 }
