@@ -58,7 +58,7 @@ output "database_instance_id" {
 
 # ID del adjunto del grupo de destino (target group)
 output "target_group_attachment_id" {
-  value = aws_lb_target_group_attachment.obligatorio_frontend.id
+  value = aws_lb_target_group_attachment.obligatorio_instancia.id
 }
 
 # URL del bucket de S3

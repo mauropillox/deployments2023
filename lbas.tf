@@ -76,6 +76,6 @@ resource "aws_autoscaling_group" "obligatorio" {
   ]
 
   depends_on = [
-    aws_lb_target_group_attachment.obligatorio_frontend
+    aws_lb_target_group_attachment.obligatorio_instancia
   ]
 }
