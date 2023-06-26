@@ -2,8 +2,6 @@ Obligatorio Implementación de Soluciones Cloud 	 Marcos Posnanski - Mauro Guima
 
 ![image](https://github.com/mauropillox/deployments2023/assets/51933362/801e59f8-1d0f-4f55-b790-75f0a2c49abe)
 
-# Obligatorio - Implementación de Soluciones Cloud - Universidad ORT Uruguay
-
 
 # INDICE
 
@@ -342,15 +340,15 @@ A lo largo del despliegue para esta tarea nos encontramos con diversos desafíos
 
 Ambos estudiantes utilizamos y estamos más familiarizados con Windows como sistema operativo base, no solo a nivel personal sino también a nivel laboral. Windows tiene algunas limitantes que al inicio tuvimos que sortear para poder acceder a la VPC y conectarlas con nuestro Visual Studio. Terminamos resolviendo estas limitantes haciendo uso de Ubuntu virtualizado desde nuestros sistemas operativos raíz. 
 
-# <a name="_toc138673105"></a>Seguridad de la solución 
+<a name="_toc138673105"></a>Seguridad de la solución 
 
 Al desplegar las subnets, tuvimos que agregar un servicio de internet NAT Gateway para poder aumentar la seguridad de la solución.
 
-# <a name="_toc138673106"></a>Permisos y usuarios para el despliegue EC2
+<a name="_toc138673106"></a>Permisos y usuarios para el despliegue EC2
 
 Un gran stopper en nuestra tarea que nos demandó un tiempo considerable resolver, fue la diferencia en con los usuarios y por ende permisos asociados a cada uno. Luego de varias horas de intentos nos dimos cuenta de que el usuario “local” desde el cual se realiza el despliegue no era el mismo que se utiliza en AWS por sí mismo. 
 
-# <a name="_toc138673107"></a>Uso de REDIS
+<a name="_toc138673107"></a>Uso de REDIS
 
 No pudimos desplegar esta solución hasta la última semana, luego de clase teórica logramos despejar varias dudas que nos permitieron su correcta implementación. 
 
@@ -384,4 +382,3 @@ No pudimos desplegar esta solución hasta la última semana, luego de clase teó
 
 
 
-2
