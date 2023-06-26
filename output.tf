@@ -83,3 +83,7 @@ output "nat_gateway_eip_ids" {
 output "kubernetes_server" {
   value = aws_instance.obligatorio_instancia.public_ip
 }
+
+output "redis_url" {
+  value = aws_elasticache_cluster.redis_instance.configuration_endpoint
+}
