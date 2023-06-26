@@ -1,22 +1,12 @@
 Obligatorio Implementación de Soluciones Cloud 	 Marcos Posnanski - Mauro Guimarans
 
-![Pantalla de computadora con letras
-
-Descripción generada automáticamente con confianza media](Aspose.Words.92efe322-e3f4-4b49-a32c-66c00cf9d8b7.001.jpeg)
+![image](https://github.com/mauropillox/deployments2023/assets/51933362/801e59f8-1d0f-4f55-b790-75f0a2c49abe)
 
 Obligatorio 
 
 Implementación de Soluciones Cloud
 
 Universidad ORT Uruguay
-
-
-
-
-
-
-
-
 
 
 # INDICE
@@ -82,23 +72,6 @@ Se presenta una solución que permite el despliegue automático de toda la arqui
 
 Se explican también en detalle y fundamentan los diseños, arquitectura y configuración de cada módulo relevante.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # <a name="_toc138673089"></a>ESQUEMA ACTUAL
 
 <a name="_toc138673090"></a>Necesidad del cliente:
@@ -111,7 +84,7 @@ Se ha contratado a la consultora BitBeat para modernizar y desplegar la arquitec
 
 <a name="_toc138673091"></a>Arquitectura actual:
 
-![Diagrama
+![image](https://github.com/mauropillox/deployments2023/assets/51933362/04fe330c-edb8-4390-832c-49ee65f3484b)
 
 Descripción generada automáticamente](Aspose.Words.92efe322-e3f4-4b49-a32c-66c00cf9d8b7.002.png)
 
@@ -123,8 +96,6 @@ Descripción generada automáticamente](Aspose.Words.92efe322-e3f4-4b49-a32c-66c
 - Un servidor donde se almacenan documentos estáticos 
 - Una base de datos clave-valor 
 - Servicios de Cache
-
-
 
 <a name="_toc138673092"></a>Oportunidades de Mejora
 
@@ -140,25 +111,6 @@ El siguiente análisis e investigación contempla los siguientes puntos:
 - Recuperación ante desastres 
 - Enfoque y prácticas DevOps 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # <a name="_toc138673093"></a>PROPUESTA
 <a name="_toc138673094"></a>Infraestructura en la Cloud
 
@@ -170,9 +122,9 @@ Proponemos crear recursos en AWS, dado que es el líder del mercado, se encuentr
 - La red de la nube de Amazon es más grande, con más puntos de presencia en todo el mundo
 - AWS es más barato que Azure en cuanto a precios de computación, que constituye la columna vertebral de las implementaciones en la nube
 
-Cuadrante de Gartner (junio 2022) ![Imagen que contiene Escala de tiempo
+Cuadrante de Gartner (junio 2022) 
 
-Descripción generada automáticamente](Aspose.Words.92efe322-e3f4-4b49-a32c-66c00cf9d8b7.003.jpeg)
+![image](https://github.com/mauropillox/deployments2023/assets/51933362/83502626-99f1-4b1e-b802-0da95e8ab329)
 
 <a name="_toc138673095"></a>Solución propuesta
 
@@ -180,7 +132,8 @@ Para el despliegue de toda la solución se utilizan recursos de AWS explicados m
 
 El esquema de recursos en IaaS en AWS es el siguiente:
 
-![Diagrama
+![image](https://github.com/mauropillox/deployments2023/assets/51933362/ae78938d-7b10-4534-91eb-d48d3f88c50e)
+
 
 Descripción generada automáticamente](Aspose.Words.92efe322-e3f4-4b49-a32c-66c00cf9d8b7.004.png)
 
@@ -198,7 +151,8 @@ Desde estas instancias se crea un link a un Bucket S3. Este Bucket está pensado
 
 Se deben desplegar un total de 11 microservicios. Estos microservicios se deben desplegar en el siguiente orden debido a sus dependencias:
 
-![Diagrama, Gráfico de burbujas
+![image](https://github.com/mauropillox/deployments2023/assets/51933362/d407c6d6-1765-4c0b-a0de-a52a2621b6a3)
+
 
 Descripción generada automáticamente](Aspose.Words.92efe322-e3f4-4b49-a32c-66c00cf9d8b7.005.png) 
 
@@ -209,13 +163,10 @@ Cada uno de esos microservicios se despliega en un pod, habiendo 11 en total, es
 La aplicación será dockerizada de forma customizada con dockerfile, creando un build de la imagen y guardándola en un docker hub, a este se accede y se ejecuta directamente en el despliegue de la instancia.
 
 
-
-
-
-
 En cada uno de estos nodos, además de los pods, se pueden crear Persistent Volume Claims (PVC) en una VPC. Estos PVC permiten que los pods accedan a volúmenes de almacenamiento independientes de la vida útil del pod. Si un pod falla o se reinicia, el PVC puede volver a reclamar el mismo almacenamiento persistente. Los PVC hacen referencia a un AWS Storage Class, el cual proporciona una abstracción de nivel superior para la administración del almacenamiento.
 
-![Gráfico
+![image](https://github.com/mauropillox/deployments2023/assets/51933362/ddcd2a61-f01d-4b83-aed0-f25d31a78e07)
+
 
 Descripción generada automáticamente](Aspose.Words.92efe322-e3f4-4b49-a32c-66c00cf9d8b7.006.png)
 
