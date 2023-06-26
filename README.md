@@ -80,7 +80,6 @@ Se ha contratado a la consultora BitBeat para modernizar y desplegar la arquitec
 
 ![image](https://github.com/mauropillox/deployments2023/assets/51933362/04fe330c-edb8-4390-832c-49ee65f3484b)
 
-Descripción generada automáticamente](Aspose.Words.92efe322-e3f4-4b49-a32c-66c00cf9d8b7.002.png)
 
 - Un RP para publicar la aplicación 
 - Dos servidores Web para el Frontend - Un Servidor web para el control de stock
