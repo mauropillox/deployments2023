@@ -52,7 +52,7 @@ resource "aws_instance" "obligatorio_instancia" {
       "sudo yum install git -y",
       # "echo 'Configurando SSH para Git'",
       # "sudo -u ec2-user mkdir -p ~/.ssh",
-      # "echo '${var.git_ssh_private_key}' | sudo tee ~/.ssh/id_rsa",
+      # "echo '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' | sudo tee ~/.ssh/id_rsa",
       # "sudo chmod 600 ~/.ssh/id_rsa",
       # "sudo eval `ssh-agent -s` && ssh-add ~/.ssh/id_rsa",
       # "sudo -u ec2-user touch ~/.ssh/config",
