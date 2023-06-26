@@ -7,13 +7,13 @@ resource "aws_eks_cluster" "obligatorio_cluster" {
   role_arn = data.aws_iam_role.labrole-arn.arn
 
   vpc_config {
-    subnet_ids               = [
+    subnet_ids = [
       aws_subnet.obligatorio_public_subnet.id,
       aws_subnet.obligatorio_public_subnet2.id
     ]
-    endpoint_public_access   = true
-    endpoint_private_access  = false
-    public_access_cidrs      = ["0.0.0.0/0"]
+    endpoint_public_access  = true
+    endpoint_private_access = false
+    public_access_cidrs     = ["0.0.0.0/0"]
   }
 }
 
@@ -21,7 +21,7 @@ resource "aws_eks_node_group" "obligatorio_node_group" {
   cluster_name    = aws_eks_cluster.obligatorio_cluster.name
   node_group_name = "obligatorio-node-group"
   node_role_arn   = data.aws_iam_role.labrole-arn.arn
-  subnet_ids      = [
+  subnet_ids = [
     aws_subnet.obligatorio_public_subnet.id,
     aws_subnet.obligatorio_public_subnet2.id
   ]

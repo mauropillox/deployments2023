@@ -1,76 +1,63 @@
-# Definir el recurso de PersistentVolume
-resource "kubernetes_persistent_volume" "obligatorio_pv" {
-  metadata {
-    name = "obligatorio-pv"
-  }
+# resource "kubernetes_persistent_volume" "obligatorio_pv" {
+#   metadata {
+#     name = "obligatorio-pv"
+#   }
 
-  spec {
-    capacity = {
-      storage = "5Gi"
-    }
-    access_modes = ["ReadWriteOnce"]
-    persistent_volume_reclaim_policy = "Retain"
-    storage_class_name = "default"
+#  depends_on = [aws_instance.obligatorio_frontend]  # Add dependency on instancias.tf resource
 
-    persistent_volume_source {
-      host_path {
-        path = "/var/www/html"
-      }
-    }
-  }
-}
+#   spec {
+#     capacity = {
+#       storage = "5Gi"
+#     }
+#     access_modes                     = ["ReadWriteOnce"]
+#     persistent_volume_reclaim_policy = "Retain"
+#     storage_class_name               = "default"
 
-# Definir el recurso de PersistentVolumeClaim
-resource "kubernetes_persistent_volume_claim" "obligatorio_pvc" {
-  metadata {
-    name = "obligatorio-pvc"
-  }
+#     persistent_volume_source {
+#       host_path {
+#         path = data.external.kubernetes_server.result
+#       }
+#     }
+#   }
+# }
 
-  spec {
-    access_modes = ["ReadWriteOnce"]
-    resources {
-      requests = {
-        storage = "2Gi"
-      }
-    }
-    storage_class_name = "default"
-    volume_name        = kubernetes_persistent_volume.obligatorio_pv.metadata[0].name
-  }
-}
+# resource "kubernetes_deployment" "obligatorio_despliegue" {
+#   metadata {
+#     name = "obligatorio-despliegue"
+#   }
 
-# Utilizar el PVC en el despliegue
-resource "kubernetes_deployment" "obligatorio_despliegue" {
-  metadata {
-    name = "obligatorio-despliegue"
-  }
+#   spec {
+#     replicas = 1
 
-  spec {
-    replicas = 1
+#     selector {
+#       match_labels = {
+#         app = "obligatorio-aplicacion"
+#       }
+#     }
 
-    selector {
-      match_labels = {
-        app = "obligatorio-aplicacion"
-      }
-    }
+#     template {
+#       metadata {
+#         labels = {
+#           app = "obligatorio-aplicacion"
+#         }
+#       }
 
-    template {
-      metadata {
-        labels = {
-          app = "obligatorio-aplicacion"
-        }
-      }
+#       spec {
+#         container {
+#           name  = "obligatorio-contenedor"
+#           image = "mi-imagen"
 
-      spec {
-        container {
-          name  = "obligatorio-contenedor"
-          image = "mi-imagen"
-          
-          volume_mount {
-            name       = "obligatorio-volumen-montado"
-            mount_path = "/var/www/html"
-          }
-        }
-      }
-    }
-  }
-}
+#           env {
+#             name  = "SERVER"
+#             value = data.external.kubernetes_server.result
+#           }
+
+#           volume_mount {
+#             name       = "obligatorio-volumen-montado"
+#             mount_path = "/var/www/html"
+#           }
+#         }
+#       }
+#     }
+#   }
+# }

@@ -7,6 +7,8 @@ frontend_instance_type        = "t2.micro" # Replace with the appropriate instan
 stock_control_instance_type   = "t2.micro" # Replace with the appropriate instance type for the stock control server
 shopping_cart_instance_type   = "t2.micro" # Replace with the appropriate instance type for the shopping cart server
 product_catalog_instance_type = "t2.micro" # Replace with the appropriate instance type for the product catalog server
+ebs_volume_size = 100
+
 
 # Database Configuration
 database_engine            = "mysql"       # Replace with the appropriate database engine
@@ -27,11 +29,13 @@ vpc_aws_az_2          = "us-east-1b" # Replace with the appropriate Availability
 cluster_name    = "obligatorio-cluster"
 node_group_name = "obligatorio-node-group"
 eks_version     = "1.27"
+# kubernetes_server = "http://${aws_instance.obligatorio_frontend.public_ip}"
+
 
 # Security configuration
 # profile    = "[default]"
 region              = "us-east-1"
-access_key          = "ASIA25IOHIQZI7X2LBM5"
-secret_key          = "J+XeTB35m5UedI+QxJ93xXlJQ79pXqz5PxxFnvJC"
-token               = "FwoGZXIvYXdzENz//////////wEaDOGJHQfoVMzzDcWTNyK2AeA8peXRfYlNk5VYRnVbdvROltVoKlLtVwV4yudSouPYnvyMsVCLJ0XNb+SqIexS4O94UVq4ZKeUMXstRXMyJo6a41iKlB1pKksB+ytCwMUmSsZcTg4HIaclHOaOeNTOY2sXxXOcAKACoGnRGBuS6J8tnjOhj9cnPTjMzyMUcKE0jwngEr5nm69huKqcARa4QD7hpJASV7kbeUrWlBzqibD8OdvWLoYomIli3uddlJ8BieLW9lD4KMCT4qQGMi2FzdO+eZJy6WCHsjb3pTczyj72KGIYHMTxV0icmjXA2T6cu4SHvU77+ksFmZA="
+access_key          = "ASIA25IOHIQZHWYOERI3"
+secret_key          = "rcr6pVXLkdB2+AqdHGLdK9AYdDsVBaCkcFILfyc8"
+token               = "FwoGZXIvYXdzEOD//////////wEaDC3OVaf1vMoe1PQgqyK2AZs13WQMxpNSfF7QdY+4DOTn2QVNqEz57a8MkNlIRuOc6+tfB4wZGgek4t8vtr6vF5ReYI9NVzPwj3DuL3mcG7foO88dtLZoK5kFsoSvVlT3d7ElipKM3WDe+15doR3AQnD61PFLpe1tF9BjklRtZDUR6CQ9X/W9EuKprBrhMEfbH6o3OCqZxsYPMIhtD70ioRVHsX48ca1OeQhKF61NuXj+nKcbsIW7C3arOf/FTn7XYwdOhhTLKN6J46QGMi1gViM7vhO2qSHiJHKzHirVHQQkaUr/HN6oR4u9uieZsQPCKkBLN4M2wAAthDE="
 git_ssh_private_key = "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"

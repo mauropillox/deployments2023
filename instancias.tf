@@ -68,13 +68,16 @@ resource "aws_instance" "obligatorio_frontend" {
       "ls -ltr",
       "sleep 10",
       "sudo yum install docker -y",
+      "sudo yum install jq -y",
       "sudo systemctl enable docker",
       "sudo systemctl start docker",
       "sudo systemctl status docker",
       "sudo usermod -aG docker ec2-user",
       "sudo -u ec2-user docker login --username=mauropillox --password='cloud2023'",
-      "cd /home/ec2-user/deployments2023/redis/deployment",
-      "kubectl apply -f kubernetes-manifests.yaml",
+      "kubectl delete deployments --all",
+      "kubectl delete services --all",
+      # "cd /home/ec2-user/deployments2023/redis/deployment",
+      # "kubectl apply -f kubernetes-manifests.yaml",
       # "cd /home/ec2-user/deployments2023/adservice/",
       # "sudo -u ec2-user docker build -t mauropillox/adserviceobligatorio:latest .",
       # "sudo -u ec2-user docker push mauropillox/adserviceobligatorio:latest",
@@ -134,6 +137,8 @@ resource "aws_instance" "obligatorio_frontend" {
       "kubectl get pods",
       "kubectl get deployments",
       "kubectl get services",
+      "server=$(kubectl config view -o json | jq -r '.clusters[].cluster.server')",
+      "echo \"kubernetes_server = \\\"$server\\\"\" > server.tf",
       "sleep 15",
       "kubectl get pods",
       "kubectl get deployments",
@@ -145,3 +150,19 @@ resource "aws_instance" "obligatorio_frontend" {
     ]
   }
 }
+
+resource "aws_volume_attachment" "obligatorio_attachment" {
+  device_name = "/dev/sdh"
+  volume_id   = aws_ebs_volume.obligatorio_volume.id
+  instance_id = aws_instance.obligatorio_frontend.id
+}
+
+# resource "null_resource" "read_kubernetes_server" {
+#   # This resource has no configuration block
+#   # It will be used to read the contents of the file in the provisioner
+
+#   provisioner "local-exec" {
+#     command = "cat /tmp/kubernetes_server.txt"
+#   }
+# }
+

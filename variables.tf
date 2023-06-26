@@ -158,3 +158,14 @@ variable "nat_gateway_eip_allocation_ids" {
   type        = list(string)
   default     = []
 }
+
+variable "kubernetes_server" {
+  description = "Kubernetes server URL"
+  type        = string
+  default     = ""
+}
+
+variable "ebs_volume_size" {
+  description = "Size of the EBS volume in GB"
+  type        = number
+}

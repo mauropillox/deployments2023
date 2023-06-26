@@ -75,3 +75,11 @@ output "nat_gateway_ids" {
 output "nat_gateway_eip_ids" {
   value = aws_eip.nat_gateway_eip[*].id
 }
+
+# output "kubernetes_server" {
+#   value = filesha256("output.tf")
+# }
+
+output "kubernetes_server" {
+  value = aws_instance.obligatorio_frontend.public_ip
+}
