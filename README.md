@@ -122,7 +122,7 @@ Cuadrante de Gartner (junio 2022)
 ![gartner](https://github.com/mauropillox/deployments2023/assets/51933362/1225219d-d06b-4118-9b21-6a87be338431)
 
 
-<a name="_toc138673095"></a>**Solución propuesta**
+<a name="_toc138673095"></a>**Infraestructura propuesta**
 
 Para el despliegue de toda la solución se utilizan recursos de AWS explicados más en detalle en el apartado “Recursos”. De esta forma automatizaremos el despliegue de la aplicación con el uso de Terraform. 
 
