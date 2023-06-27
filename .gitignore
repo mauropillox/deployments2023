@@ -1,5 +1,4 @@
-.terraform/ 
-obligatorioterraform2023/terraform.tfstate
-obligatorioterraform2023/terraform.tfvars
-obligatorioterraform2023/terraform.tfstate.backup
-obligatorioterraform2023/labsuser.pem
+terraform.tfstate
+terraform.tfvars
+terraform.tfstate.backup
+labsuser.pem
