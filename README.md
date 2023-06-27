@@ -68,7 +68,7 @@ Se explican también en detalle y fundamentan los diseños, arquitectura y confi
 
 # <a name="_toc138673089"></a>ESQUEMA ACTUAL
 
-<a name="_toc138673090"></a>Necesidad del cliente:
+<a name="_toc138673090"></a>**Necesidad del cliente:**
 
 La startup “e-shop Services” ha recibido una ronda de inversión para expandir sus operaciones por todo el mundo, haciendo llegar sus servicios de e-commerce y retail, a todo el continente de América. 
 
@@ -76,7 +76,7 @@ La competencia actualmente está posicionada en la región a la cual se quiere e
 
 Se ha contratado a la consultora BitBeat para modernizar y desplegar la arquitectura e infraestructura de su aplicación que actualmente corre en un datacenter on-premise. Una célula de desarrollo trabajó en la implementación del e-commerce basado en una arquitectura de microservicios para correr sobre containers cuyo ciclo de integración continua ya se encuentra configurado y la solución ya se encuentra disponible para desplegar por parte del equipo de DevOps.
 
-<a name="_toc138673091"></a>Arquitectura actual:
+<a name="_toc138673091"></a>**Arquitectura actual:**
 
 ![image](https://github.com/mauropillox/deployments2023/assets/51933362/04fe330c-edb8-4390-832c-49ee65f3484b)
 
@@ -90,7 +90,7 @@ Se ha contratado a la consultora BitBeat para modernizar y desplegar la arquitec
 - Una base de datos clave-valor 
 - Servicios de Cache
 
-<a name="_toc138673092"></a>Oportunidades de Mejora
+<a name="_toc138673092"></a>**Oportunidades de Mejora**
 
 Se detectan diversas oportunidades de mejora, las cuales se basan en la modernización de la tecnologia en infraestructura, que acompañe el crecimiento del negocio y la escalabilidad a corto/mediano plazo que se presente. 
 
@@ -105,7 +105,7 @@ El siguiente análisis e investigación contempla los siguientes puntos:
 - Enfoque y prácticas DevOps 
 
 # <a name="_toc138673093"></a>PROPUESTA
-<a name="_toc138673094"></a>Infraestructura en la Cloud
+<a name="_toc138673094"></a>**Infraestructura en la Cloud**
 
 Proponemos crear recursos en AWS, dado que es el líder del mercado, se encuentra la mayor documentación, aportes en la comunidad, innovación en productos y cantidad de servicios.
 
@@ -119,7 +119,7 @@ Cuadrante de Gartner (junio 2022)
 
 ![image](https://github.com/mauropillox/deployments2023/assets/51933362/83502626-99f1-4b1e-b802-0da95e8ab329)
 
-<a name="_toc138673095"></a>Solución propuesta
+<a name="_toc138673095"></a>**Solución propuesta**
 
 Para el despliegue de toda la solución se utilizan recursos de AWS explicados más en detalle en el apartado “Recursos”. De esta forma automatizaremos el despliegue de la aplicación con el uso de Terraform. 
 
@@ -138,7 +138,7 @@ Estos recursos se encuentran bajo una VPC, en la cual se encuentran 4 subnet, 2 
 
 Desde estas instancias se crea un link a un Bucket S3. Este Bucket está pensado para almacenar eventualmente recursos que sean necesarios. 
 
-<a name="_toc138673096"></a>Kubernetes como Servicio (EKS)
+<a name="_toc138673096"></a>**Kubernetes como Servicio (EKS)**
 
 Se deben desplegar un total de 11 microservicios. Estos microservicios se deben desplegar en el siguiente orden debido a sus dependencias:
 
@@ -180,7 +180,7 @@ Vemos que no solamente se despliega la pagina web, sino que también todos los s
 
 # <a name="_toc138673097"></a>RECURSOS
 
-# <a name="_toc138673098"></a>Datos de Infraestructura
+<a name="_toc138673098"></a>**Datos de Infraestructura**
 
 - Tipo de instancia de EC2 para el frontend: t2.micro
 - Tipo de instancia de EC2 para Redis: cache.t2.micro
@@ -217,7 +217,7 @@ Vemos que no solamente se despliega la pagina web, sino que también todos los s
 
 
 
-# <a name="_toc138673099"></a>Servicios de AWS Utilizados
+<a name="_toc138673099"></a>**Servicios de AWS Utilizados**
 
 - EC2 (Elastic Compute Cloud): Se utilizan instancias EC2 para implementar los diferentes servicios, como frontend, Redis, cartservice, adservice, currencyservice, emailservice, paymentservice, productcatalogservice, recommendationservice, checkoutservice, loadgenerator y shippingservice.
 - RDS (Relational Database Service): Se utiliza RDS para implementar la base de datos relacional con el motor de base de datos MySQL.
@@ -241,13 +241,13 @@ Vemos que no solamente se despliega la pagina web, sino que también todos los s
 
 
 
-# <a name="_toc138673100"></a>Variables para las instancias EC2
+<a name="_toc138673100"></a>**Variables para las instancias EC2**
 
 frontend\_instance\_type = "t2.micro"
 
 redis\_instance\_type = "cache.t2.micro"
 
-<a name="_toc138673101"></a>Variables para la base de datos RDS
+<a name="_toc138673101"></a>**Variables para la base de datos RDS**
 
 rds\_engine = "mysql"
 
@@ -255,7 +255,7 @@ rds\_instance\_class = "db.t2.micro"
 
 rds\_allocated\_storage = 10
 
-<a name="_toc138673102"></a>Variables para los grupos de seguridad
+<a name="_toc138673102"></a>**Variables para los grupos de seguridad**
 
 vpc\_security\_group = "grupo-seguridad-ssh"
 
@@ -283,7 +283,7 @@ s3\_security\_group = "grupo-seguridad-s3-access"
 
 
 
-# Variables para el nombre de los recursos
+**Variables para el nombre de los recursos**
 
 lb\_name = "obligatorio-lb"
 
@@ -335,19 +335,19 @@ s3\_bucket\_name = "obligatorio1"
 
 A lo largo del despliegue para esta tarea nos encontramos con diversos desafíos que nos parecen importantes remarcar a continuación: 
 
-<a name="_toc138673104"></a>Utilización del sistema operativo
+<a name="_toc138673104"></a>**Utilización del sistema operativo**
 
 Ambos estudiantes utilizamos y estamos más familiarizados con Windows como sistema operativo base, no solo a nivel personal sino también a nivel laboral. Windows tiene algunas limitantes que al inicio tuvimos que sortear para poder acceder a la VPC y conectarlas con nuestro Visual Studio. Terminamos resolviendo estas limitantes haciendo uso de Ubuntu virtualizado desde nuestros sistemas operativos raíz. 
 
-<a name="_toc138673105"></a>Seguridad de la solución 
+<a name="_toc138673105"></a>**Seguridad de la solución** 
 
 Al desplegar las subnets, tuvimos que agregar un servicio de internet NAT Gateway para poder aumentar la seguridad de la solución.
 
-<a name="_toc138673106"></a>Permisos y usuarios para el despliegue EC2
+<a name="_toc138673106"></a>**Permisos y usuarios para el despliegue EC2**
 
 Un gran stopper en nuestra tarea que nos demandó un tiempo considerable resolver, fue la diferencia en con los usuarios y por ende permisos asociados a cada uno. Luego de varias horas de intentos nos dimos cuenta de que el usuario “local” desde el cual se realiza el despliegue no era el mismo que se utiliza en AWS por sí mismo. 
 
-<a name="_toc138673107"></a>Uso de REDIS
+<a name="_toc138673107"></a>**Uso de REDIS**
 
 No pudimos desplegar esta solución hasta la última semana, luego de clase teórica logramos despejar varias dudas que nos permitieron su correcta implementación. 
 
