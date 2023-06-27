@@ -78,7 +78,7 @@ La competencia actualmente está posicionada en la región a la cual se quiere e
 
 Se ha contratado a la consultora BitBeat para modernizar y desplegar la arquitectura e infraestructura de su aplicación que actualmente corre en un datacenter on-premise. Una célula de desarrollo trabajó en la implementación del e-commerce basado en una arquitectura de microservicios para correr sobre containers cuyo ciclo de integración continua ya se encuentra configurado y la solución ya se encuentra disponible para desplegar por parte del equipo de DevOps.
 
-<a name="_toc138673091"></a>**Arquitectura actual:**
+<a name="_toc138673091"></a>**Arquitectura a migrar:**
 
 ![image](https://github.com/mauropillox/deployments2023/assets/51933362/04fe330c-edb8-4390-832c-49ee65f3484b)
 
