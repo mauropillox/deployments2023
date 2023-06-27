@@ -145,7 +145,8 @@ Desde estas instancias se crea un link a un Bucket S3. Este Bucket está pensado
 
 Se deben desplegar un total de 11 microservicios. Estos microservicios se deben desplegar en el siguiente orden debido a sus dependencias:
 
-![Untitled](https://github.com/mauropillox/deployments2023/assets/51933362/d58c3e06-fd35-4765-b1ea-e3e9dc03d837)
+![Untitled (2)](https://github.com/mauropillox/deployments2023/assets/51933362/984cda0b-2938-4f38-a868-e3fed4ffce8b)
+
 
 
 
