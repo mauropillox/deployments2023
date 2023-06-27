@@ -225,28 +225,23 @@ Vemos que no solamente se despliega la pagina web, sino que también todos los s
 
 <a name="_toc138673099"></a>**Servicios de AWS Utilizados**
 
-- EC2 (Elastic Compute Cloud): Se utilizan instancias EC2 para implementar los diferentes servicios, como frontend, Redis, cartservice, adservice, currencyservice, emailservice, paymentservice, productcatalogservice, recommendationservice, checkoutservice, loadgenerator y shippingservice.
-- RDS (Relational Database Service): Se utiliza RDS para implementar la base de datos relacional con el motor de base de datos MySQL.
-- ElastiCache: Se utiliza ElastiCache para implementar el cache de Redis con instancias de tipo cache.t2.micro.
-- S3 (Simple Storage Service): Se utiliza S3 para implementar el bucket de almacenamiento.
-- Elastic Load Balancer: Se utiliza el balanceador de carga para distribuir el tráfico entre las instancias.
-- Application Load Balancer (ALB): Se utiliza este servicio de balanceo de carga que distribuye el tráfico de red de manera eficiente entre las dos instancias, ayudando a mejorar la escalabilidad, la disponibilidad y el rendimiento de la aplicación.
-- NAT Gateway: Utilizamos este servicio para que las instancias privadas en la red VPC se comuniquen con Internet de forma segura.
-- Security Groups: Utilizamos los grupos de seguridad para controlar el tráfico de red entrante y saliente para las instancias de Amazon EC2 y otros servicios de AWS.
-- Subnet: Utilizamos 4 subnet entre privadas y públicas para separar y organizar recursos en la red virtual.
+1. *Amazon EC2 (Elastic Compute Cloud)*: Se utilizan instancias de Amazon EC2 para implementar los diferentes servicios del sistema, como el frontend, Redis, cartservice, adservice, currencyservice, emailservice, paymentservice, productcatalogservice, recommendationservice, checkoutservice, loadgenerator y shippingservice. Estas instancias proporcionan capacidad computacional escalable y flexible en la nube.
 
+2. *Amazon RDS (Relational Database Service)*: Se utiliza Amazon RDS para implementar la base de datos relacional con el motor de base de datos MySQL. Amazon RDS simplifica la administración de bases de datos al encargarse de tareas como el aprovisionamiento, la copia de seguridad, la escalabilidad y las actualizaciones del motor de base de datos.
 
+3. *Amazon ElastiCache*: Se utiliza Amazon ElastiCache para implementar el caché de Redis con instancias de tipo cache.t2.micro. ElastiCache permite mejorar el rendimiento de las aplicaciones al almacenar en caché datos frecuentemente utilizados, reduciendo así las solicitudes a la base de datos.
 
+4. *Amazon S3 (Simple Storage Service)*: Se utiliza Amazon S3 para implementar el bucket de almacenamiento. Amazon S3 proporciona un almacenamiento seguro, duradero y altamente escalable para los archivos y objetos del sistema.
 
+5. *Elastic Load Balancer*: Se utiliza Elastic Load Balancer para distribuir el tráfico entre las instancias de EC2. Esto ayuda a mejorar la disponibilidad y el rendimiento del sistema al distribuir la carga de manera equitativa entre las instancias.
 
+6. *Application Load Balancer (ALB)*: Se utiliza el servicio Application Load Balancer para distribuir el tráfico de red de manera eficiente entre las instancias. El ALB proporciona capacidades avanzadas de enrutamiento y permite configurar reglas para dirigir el tráfico a diferentes servicios o rutas según las necesidades de la aplicación.
 
+7. *NAT Gateway*: Se utiliza el servicio NAT Gateway para permitir que las instancias privadas en la red VPC se comuniquen de forma segura con Internet. El NAT Gateway actúa como un punto de salida para el tráfico saliente de las instancias privadas.
 
+8. *Grupos de seguridad (Security Groups)*: Se utilizan los grupos de seguridad de Amazon EC2 para controlar el tráfico de red entrante y saliente para las instancias de EC2 y otros servicios de AWS. Los grupos de seguridad permiten definir reglas de firewall a nivel de instancia para proteger los recursos y restringir el acceso no autorizado.
 
-
-
-
-
-
+9. *Amazon VPC (Virtual Private Cloud)*: Se utiliza Amazon VPC para crear y administrar la red virtual del sistema. Las subredes públicas y privadas se implementan dentro de la VPC para separar y organizar los recursos, permitiendo la conectividad desde Internet en las subredes públicas y aislamiento en las subredes privadas.
 <a name="_toc138673100"></a>**Variables para las instancias EC2**
 
 frontend\_instance\_type = "t2.micro"
