@@ -119,7 +119,8 @@ Proponemos crear recursos en AWS, dado que es el líder del mercado, se encuentr
 
 Cuadrante de Gartner (junio 2022) 
 
-![image](https://github.com/mauropillox/deployments2023/assets/51933362/83502626-99f1-4b1e-b802-0da95e8ab329)
+![gartner](https://github.com/mauropillox/deployments2023/assets/51933362/1225219d-d06b-4118-9b21-6a87be338431)
+
 
 <a name="_toc138673095"></a>**Solución propuesta**
 
@@ -176,7 +177,8 @@ En cada uno de estos nodos, además de los pods, se pueden crear Persistent Volu
 
 Una vez finalizado el despliegue quedara accesible la pagina con todas sus funcionalidades:
 
-![image](https://github.com/mauropillox/deployments2023/assets/51933362/5d1398c9-ad61-4464-b7f3-d1c2b491cca1)
+![Untitled (1)](https://github.com/mauropillox/deployments2023/assets/51933362/00caf56d-cef3-436f-aa0c-6be0ad534739)
+
 
 
 
