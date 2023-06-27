@@ -259,6 +259,7 @@ s3\_security\_group = "grupo-seguridad-s3-access"
 
 
 <a name="_toc138673102"></a>**Variables para File System**
+
 variable "ebs_volume_size" {
   description = "Size of the EBS volume in GB"
   type        = number
