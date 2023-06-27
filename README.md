@@ -275,6 +275,12 @@ s3\_security\_group = "grupo-seguridad-s3-access"
 
 
 
+<a name="_toc138673102"></a>**Variables para File System**
+variable "ebs_volume_size" {
+  description = "Size of the EBS volume in GB"
+  type        = number
+}
+ el valor es 50
 
 
 
@@ -282,9 +288,7 @@ s3\_security\_group = "grupo-seguridad-s3-access"
 
 
 
-
-
-**Variables para el nombre de los recursos**
+<a name="_toc138673102"></a>**Variables para el nombre de los recursos**
 
 lb\_name = "obligatorio-lb"
 
@@ -319,6 +323,7 @@ db\_instance\_name = "obligatorio-database"
 redis\_instance\_name = "obligatorio-redis-instance"
 
 s3\_bucket\_name = "obligatorio1"
+
 
 #
 
