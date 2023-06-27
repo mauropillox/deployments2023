@@ -160,13 +160,13 @@ En cada uno de estos nodos, además de los pods, se pueden crear Persistent Volu
 
 ![pods](https://github.com/mauropillox/deployments2023/assets/51933362/89813021-0aa2-4997-a0f6-814d8988d65b)
 
-Se realiza el despliegue de la solucion
+Se realiza el despliegue:
 
 ![WhatsApp Image 2023-06-27 at 12 23 13](https://github.com/mauropillox/deployments2023/assets/51933362/54810148-be06-4db2-b839-b1ef06f539ca)
 
 
 
-Una vez finalizado el despliegue quedara accesible la pagina con todas sus funcionalidades:
+Una vez finalizado el despliegue quedara accesible la página con todas sus funcionalidades:
 
 ![Untitled (1)](https://github.com/mauropillox/deployments2023/assets/51933362/00caf56d-cef3-436f-aa0c-6be0ad534739)
 
