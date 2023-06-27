@@ -127,7 +127,7 @@ Para el despliegue de toda la solución se utilizan recursos de AWS explicados m
 
 El esquema de recursos en IaaS en AWS es el siguiente:
 
-![image](https://github.com/mauropillox/deployments2023/assets/51933362/ae78938d-7b10-4534-91eb-d48d3f88c50e)
+![infra](https://github.com/mauropillox/deployments2023/assets/51933362/8bdfcb91-4bdb-4130-8723-47f321827d79)
 
 
 Se crea una instancia EC2 T2.micro la cual pertenece a un grupo de autoescalado, con un máximo de 2 instancias deseadas, de esta forma nos aseguramos la cantidad de instancias activas bajo cualquier problema que afecte la disponibilidad. 
@@ -144,7 +144,8 @@ Desde estas instancias se crea un link a un Bucket S3. Este Bucket está pensado
 
 Se deben desplegar un total de 11 microservicios. Estos microservicios se deben desplegar en el siguiente orden debido a sus dependencias:
 
-![image](https://github.com/mauropillox/deployments2023/assets/51933362/d407c6d6-1765-4c0b-a0de-a52a2621b6a3)
+![Untitled](https://github.com/mauropillox/deployments2023/assets/51933362/d58c3e06-fd35-4765-b1ea-e3e9dc03d837)
+
 
 
 Para esta solución, decidimos desplegar un cluster de Kubernetes como servicio, haciendo uso de las 2 instancias EC2 como nodos de trabajo. 
@@ -156,7 +157,8 @@ La aplicación será dockerizada de forma customizada con dockerfile, creando un
 
 En cada uno de estos nodos, además de los pods, se pueden crear Persistent Volume Claims (PVC) en una VPC. Estos PVC permiten que los pods accedan a volúmenes de almacenamiento independientes de la vida útil del pod. Si un pod falla o se reinicia, el PVC puede volver a reclamar el mismo almacenamiento persistente. Los PVC hacen referencia a un AWS Storage Class, el cual proporciona una abstracción de nivel superior para la administración del almacenamiento.
 
-![image](https://github.com/mauropillox/deployments2023/assets/51933362/ddcd2a61-f01d-4b83-aed0-f25d31a78e07)
+![pods](https://github.com/mauropillox/deployments2023/assets/51933362/89813021-0aa2-4997-a0f6-814d8988d65b)
+
 
 
 
