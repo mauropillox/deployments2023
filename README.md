@@ -354,6 +354,8 @@ No pudimos desplegar esta solución hasta la última semana, luego de clase teó
 
 # <a name="_toc138673108"></a>REFERENCIAS
 
+<https://developer.hashicorp.com/terraform/docs>
+
 <https://kubernetes.io/docs/concepts/storage/storage-classes/> 
 
 <https://azure.microsoft.com/en-us/overview/what-is-cloud-computing/> 
@@ -367,7 +369,5 @@ No pudimos desplegar esta solución hasta la última semana, luego de clase teó
 <https://kinsta.com/es/blog/aws-vs-azure/>
 
 <https://aws.amazon.com/blogs>
-
-
 
 
