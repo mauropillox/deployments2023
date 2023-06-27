@@ -1,4 +1,4 @@
-Obligatorio Implementación de Soluciones Cloud 	 Marcos Posnanski - Mauro Guimarans
+**Obligatorio Implementación de Soluciones Cloud** 	 Marcos Posnanski - Mauro Guimarans
 
 ![image](https://github.com/mauropillox/deployments2023/assets/51933362/801e59f8-1d0f-4f55-b790-75f0a2c49abe)
 
